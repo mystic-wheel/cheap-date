@@ -1,0 +1,66 @@
+{
+  "name": "cheap-date",
+  "description": "Find local specials and happy hours",
+  "version": "0.0.0",
+  "homepage": "",
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "Sam Margalit",
+    "email": "sam@margalit.com.au"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "yarn": ">= 0.18.0"
+  },
+  "scripts": {
+    "test": "yarn run mocha",
+    "eslint": "./node_modules/.bin/eslint .",
+    "start": "node src/",
+    "dev": "concurrently \"yarn run start\" \"webpack-dev-server --hot --open\"",
+    "mocha": "mocha test/ --recursive"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "compression": "^1.6.2",
+    "cors": "^2.8.3",
+    "feathers": "^2.1.3",
+    "feathers-configuration": "^0.4.1",
+    "feathers-errors": "^2.8.1",
+    "feathers-hooks": "^2.0.1",
+    "feathers-hooks-common": "^3.5.1",
+    "feathers-nedb": "^2.6.2",
+    "feathers-rest": "^1.7.3",
+    "feathers-socketio": "^2.0.0",
+    "helmet": "^3.6.1",
+    "nedb": "^1.8.0",
+    "serve-favicon": "^2.4.3",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-react": "^6.24.1",
+    "concurrently": "^3.4.0",
+    "eslint": "^4.0.0",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "eslint-plugin-react": "^7.0.1",
+    "flow-bin": "^0.47.0",
+    "mocha": "^3.4.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "next",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
