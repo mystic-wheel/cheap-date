@@ -1,4 +1,5 @@
 // @flow
+const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
@@ -7,7 +8,9 @@ module.exports = {
     './app/index.js',
   ],
   output: {
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public'),
+    publicPath: '/assets/',
   },
   module: {
     rules: [
@@ -21,7 +24,8 @@ module.exports = {
     new webpack.NamedModulesPlugin()
   ],
   devServer: {
+    historyApiFallback: true,
     contentBase: './public',
-    hot: true,
+    publicPath: 'http://localhost:8080/assets/',
   }
 }

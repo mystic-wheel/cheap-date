@@ -38,6 +38,10 @@ module.exports = {
     "semi": [
       "error",
       "never"
+    ],
+    "flowtype/delimiter-dangle": [
+      2,
+      "always-multiline"
     ]
   }
 };

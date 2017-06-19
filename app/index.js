@@ -1,23 +1,31 @@
 // @flow
+import loadFacebookThen from './facebook'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import Root from './root'
+import { Provider } from 'mobx-react'
+import Root from './Root'
+import AppState from './AppState'
+const state = new AppState()
 
-const render = Component => {
+const render = App => {
   ReactDOM.render(
     <AppContainer>
-      <Component name="Mike" />
+      <Provider state={state}>
+        <App />
+      </Provider>
     </AppContainer>,
     document.getElementById('root')
   )
 }
 
-render(Root)
+loadFacebookThen(() => {
+  render(Root)
+})
 
 if (module.hot) {
-  module.hot.accept('./root.js', () => {
-    const NextRoot = require('./root').default
+  module.hot.accept('./Root.js', () => {
+    const NextRoot = require('./Root').default
     render(NextRoot)
   })
 }
